@@ -1,0 +1,10 @@
+resource_group_name  = "rg-avarthusdevcloud"
+location             = "westeurope"
+static_web_app_name  = "swa-avarthusdevcloud"
+custom_domain        = "avarthusdevcloud.cloud"
+
+tags = {
+  project     = "avarthusdevcloud"
+  environment = "production"
+  managed_by  = "terraform"
+}

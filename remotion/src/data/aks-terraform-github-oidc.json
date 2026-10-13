@@ -1,0 +1,15 @@
+{
+  "title": "AKS Cluster with Terraform and GitHub Actions OIDC",
+  "techStack": ["Terraform", "AKS", "GitHub Actions", "OIDC", "Azure CLI"],
+  "steps": [
+    { "label": "Initialize Terraform", "command": "terraform init" },
+    { "label": "Plan infrastructure", "command": "terraform plan -out=tfplan" },
+    { "label": "Apply infrastructure", "command": "terraform apply tfplan" },
+    { "label": "Get AKS credentials", "command": "az aks get-credentials --resource-group rg-lab --name aks-lab" },
+    { "label": "Verify nodes", "command": "kubectl get nodes" },
+    { "label": "Deploy workload", "command": "kubectl apply -f k8s/deployment.yaml" },
+    { "label": "Check pods", "command": "kubectl get pods -n default" }
+  ],
+  "repoUrl": "github.com/Tusartus/aks-terraform-github-oidc",
+  "siteUrl": "avarthusdevcloud.cloud"
+}
